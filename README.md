@@ -105,7 +105,7 @@ Observation:
 
 6) Model Validation and Testing: Split the dataset into training and testing sets to assess the model's generalization performance. Validate the model's predictions against real-world demand data
 
-##<b>Conclusion:</b>
+<b>Conclusion:</b>
 1. EDA insights:
   * Most number of bikes are rented in the Summer season and the lowest in the winter season.
   * Over 96% of the bikes are rented on days that are considered as No Holiday.
