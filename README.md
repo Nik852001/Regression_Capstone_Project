@@ -99,26 +99,30 @@ Observation:
 ![image](https://github.com/Nik852001/Regression_Capstone_Project/assets/93510310/34f504e3-2786-45aa-86a0-85f42c0fd551)
 
 
-4) Feature Engineering: Create relevant features, such as time of day, day of the week, and weather indicators, to improve the model's accuracy. Handle categorical variables through encoding techniques.
-   
-#Encoding for Seasons column
-bike_sharing_df['Winter'] = np.where(bike_sharing_df['Seasons']=='Winter', 1, 0)
-bike_sharing_df['Spring'] = np.where(bike_sharing_df['Seasons']=='Spring', 1, 0)
-bike_sharing_df['Summer'] = np.where(bike_sharing_df['Seasons']=='Summer', 1, 0)
-bike_sharing_df['Autumn'] = np.where(bike_sharing_df['Seasons']=='Autumn', 1, 0)
-
-#Removing seasons column since we dont require it now.
-
-bike_sharing_df.drop(columns=['Seasons'],axis=1,inplace=True)
-
-#Encoding for Holiday column
-
-bike_sharing_df['Holiday'] = np.where(bike_sharing_df['Holiday']=='Holiday',1,0)
-
-#Encoding for Functioning day
-
-bike_sharing_df['Functioning Day'] = np.where(bike_sharing_df['Functioning Day']=='Yes',1,0)
+4) Feature Engineering: Create relevant features, such as time of day, day of the week, and weather indicators, to improve the model's accuracy. Handle categorical variables through encoding techniques. For feature Engineering I used One-hot encoding.
 
 5) Model Development: Implement various machine learning algorithms, such as linear regression, decision trees, random forests, and gradient boosting, to build predictive models. Evaluate and compare the performance of these models using appropriate metrics, like Mean Absolute Error (MAE) or Root Mean Square Error (RMSE).
 
 6) Model Validation and Testing: Split the dataset into training and testing sets to assess the model's generalization performance. Validate the model's predictions against real-world demand data
+
+##<b>Conclusion:</b>
+1. EDA insights:
+  * Most number of bikes are rented in the Summer season and the lowest in the winter season.
+  * Over 96% of the bikes are rented on days that are considered as No Holiday.
+  * Most number of bikes are rented when there is no snowfall or rainfall.
+  * The majority of the bikes are rented for a humidity percentage range of 30 to 70.
+  * The highest number of bike rentals have been done in the 18th hour, i.e. 6 pm, and the lowest in the 4th hour, i.e. 4 am.
+  * Most of the bike rentals have been made when there is high visibility.
+
+2. Results from ML models:
+  * Random Forest Regression is the best-performing model with a testing r2 score of 0.6799 and a training r2 score of 0.96.
+  * Lasso Regression(L1 regularization) is the worst performing model with an r2 score of 0.4377.
+  * Actual vs. Prediction visualization is done for all 4 models.
+  * All 4 models have been explained with the help of the SHAP library.
+  * Temperature and Hour are the two most important factors according to all the models.
+
+3. Challenges faced:
+  * Removing Outliers.
+  * Encoding the categorical columns.
+  * Removing Multicollinearity from the dataset.
+  * Choosing Model explainability technique.
