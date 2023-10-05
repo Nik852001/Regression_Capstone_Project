@@ -108,12 +108,15 @@ bike_sharing_df['Summer'] = np.where(bike_sharing_df['Seasons']=='Summer', 1, 0)
 bike_sharing_df['Autumn'] = np.where(bike_sharing_df['Seasons']=='Autumn', 1, 0)
 
 #Removing seasons column since we dont require it now.
+
 bike_sharing_df.drop(columns=['Seasons'],axis=1,inplace=True)
 
 #Encoding for Holiday column
+
 bike_sharing_df['Holiday'] = np.where(bike_sharing_df['Holiday']=='Holiday',1,0)
 
 #Encoding for Functioning day
+
 bike_sharing_df['Functioning Day'] = np.where(bike_sharing_df['Functioning Day']=='Yes',1,0)
 
 5) Model Development: Implement various machine learning algorithms, such as linear regression, decision trees, random forests, and gradient boosting, to build predictive models. Evaluate and compare the performance of these models using appropriate metrics, like Mean Absolute Error (MAE) or Root Mean Square Error (RMSE).
